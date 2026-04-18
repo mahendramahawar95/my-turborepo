@@ -15,6 +15,8 @@ const initialState: FormState = {
   success: false,
 };
 
+console.log("hii")
+
 
 export default function RegisterForm() {
   const [state, formAction] = useActionState(
