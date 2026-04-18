@@ -15,9 +15,6 @@ const initialState: FormState = {
   success: false,
 };
 
-console.log("hii")
-
-
 export default function RegisterForm() {
   const [state, formAction] = useActionState(
     registerUser,
@@ -60,7 +57,7 @@ export default function RegisterForm() {
         <p className="text-green-500">Success!</p>
       )}
 
-      <SubmitButton />
+      <SubmitButton label="Submit" />
     </form>
   );
 }

@@ -1,8 +1,11 @@
 "use client";
 
 import {useFormStatus} from "react-dom"
-
-export const SubmitButton = ({ label = "Submit" }) => {
+type props={
+    label:string;
+}
+export const SubmitButton = ({ label = "Submit" }:props) => {
+    
   const { pending } = useFormStatus();
 
   return (
