@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "type": "module",
   "private": true,
+    "main": "tailwind.config.ts",
+  "types": "tailwind.config.ts",
   "exports": {
     ".": "./shared-styles.css",
     "./postcss": "./postcss.config.js"
