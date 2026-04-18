@@ -12,6 +12,7 @@ const initialState: FormState = {
     email: "",
     password: "",
   },
+  
   success: false,
 };
 
