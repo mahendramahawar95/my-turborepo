@@ -1,0 +1,8 @@
+{
+  "name": "@repo/db",
+  "main": "index.ts",
+  "types": "index.ts",
+  "devDependencies": {
+    "@types/node": "^22.18.12"
+  }
+}
