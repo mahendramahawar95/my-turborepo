@@ -1,6 +1,8 @@
 {
   "name": "@repo/ui",
   "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
   "sideEffects": [
     "**/*.css"
   ],
@@ -9,9 +11,9 @@
   ],
   "exports": {
     "./styles.css": "./dist/index.css",
-    "./*": "./dist/*.js"
+    "./*": "./src/*.tsx"
   },
-  "license": "MIT",
+  "types": "./src/index.ts",
   "scripts": {
     "build:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
     "build:components": "tsc",
