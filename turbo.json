@@ -12,7 +12,7 @@
     },
     "check-types": {
       "dependsOn": ["^check-types"],
-       "outputs": [".next/**", "dist/**"]
+      "outputs": [".next/**", "dist/**"]
     },
     "dev": {
       "cache": false,
@@ -20,5 +20,3 @@
     }
   }
 }
-
-

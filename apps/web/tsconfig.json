@@ -13,7 +13,9 @@
     "**/*.tsx",
     "next-env.d.ts",
     "next.config.ts",
-    ".next/types/**/*.ts"
-, "tailwind.config.js", "postcss.config.js"  ],
+    ".next/types/**/*.ts",
+    "tailwind.config.js",
+    "postcss.config.js"
+  ],
   "exclude": ["node_modules"]
 }

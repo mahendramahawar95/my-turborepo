@@ -18,7 +18,7 @@ export type FormState = {
 
 export async function registerUser(
   prevState: FormState,
-  formData: FormData
+  formData: FormData,
 ): Promise<FormState> {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
@@ -28,8 +28,7 @@ export async function registerUser(
 
   if (!name) errors.name = "Name is required";
   if (!email) errors.email = "Email is required";
-  if (password.length < 6)
-    errors.password = "Min 6 characters";
+  if (password.length < 6) errors.password = "Min 6 characters";
 
   // ❌ Return errors + values
   if (Object.keys(errors).length > 0) {

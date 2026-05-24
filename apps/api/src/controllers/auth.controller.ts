@@ -3,7 +3,7 @@ import { registerUser } from "../services/auth.service";
 
 export const register = async (req: any, res: any) => {
   try {
-     const { name, email, password } = req.body;
+    const { name, email, password } = req.body;
 
     console.log("Name:", name);
     console.log("Email:", email);
