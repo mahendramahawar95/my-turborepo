@@ -1,25 +1,16 @@
-"use client";
+import * as React from "react";
+import { cn } from "./utils";
 
-import { useFormStatus } from "react-dom";
+ type ButtonProps = React.ComponentProps<"button">;
 
-type Props = {
-  label?: string;
-  isDisabled?: boolean;
-};
-
-export const SubmitButton = ({
-  label = "Submit",
-  isDisabled = false,
-}: Props) => {
-  const { pending } = useFormStatus();
-
+export function Button({ className, ...props }: ButtonProps) {
   return (
     <button
-      type="submit"
-      disabled={pending || isDisabled}
-      className="w-full bg-blue-500 text-white py-2 rounded disabled:opacity-50"
-    >
-      {pending ? "Loading..." : label}
-    </button>
+      className={cn(
+        "h-11 rounded-md bg-black px-5 text-white transition hover:opacity-90 disabled:opacity-50",
+        className,
+      )}
+      {...props}
+    />
   );
-};
+}

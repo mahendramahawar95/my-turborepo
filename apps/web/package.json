@@ -4,19 +4,22 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 2000",
+    "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --max-warnings 0",
     "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
+    "@repo/api-client": "workspace:*",
     "@repo/ui": "workspace:*",
+    "@tanstack/react-query": "^5.100.14",
     "next": "16.2.0",
     "react": "^19.2.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@hookform/resolvers": "^5.4.0",
     "@next/eslint-plugin-next": "^16.2.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
@@ -28,6 +31,7 @@
     "autoprefixer": "^10.4.20",
     "eslint": "^9.39.1",
     "postcss": "^8.5.3",
+    "react-hook-form": "^7.76.1",
     "tailwindcss": "^4.1.5",
     "typescript": "5.9.2"
   }

@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@repo/*": ["packages/*/src"]
+    },
+    "ignoreDeprecations": "6.0"
+  }
+}

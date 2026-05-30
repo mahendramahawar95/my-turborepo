@@ -1,34 +1,21 @@
-import { Fragment } from "react/jsx-runtime";
+import * as React from "react";
+import { cn } from "./utils";
 
-type props = {
-  name: string;
-  type: string;
-  placeholder?: string;
-  defaultValue?: string;
-  error?: string;
-};
+type InputProps = React.ComponentProps<"input">;
 
-export const Input = ({
-  name,
-  type = "text",
-  placeholder,
-  defaultValue,
-  error,
-}: props) => {
-  return (
-    <Fragment>
+export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, ...props }, ref) => {
+    return (
       <input
-        type={type}
-        placeholder={placeholder}
-        defaultValue={defaultValue}
-        name={name}
-        className={`w-full border p-2 rounded ${
-          error ? "border-red-500" : "border-gray-300"
-        }`}
+        ref={ref}
+        className={cn(
+          "h-11 w-full rounded-md border border-gray-300 px-3 text-sm outline-none focus:border-black",
+          className,
+        )}
+        {...props}
       />
-      <p className="text-red-500 m-0 text-sm min-h-[20px] transition-all duration-200">
-        {error || ""}
-      </p>
-    </Fragment>
-  );
-};
+    );
+  },
+);
+
+Input.displayName = "Input";

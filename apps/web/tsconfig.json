@@ -3,10 +3,11 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "ESNext",
-    "baseUrl": ".",
     "moduleResolution": "bundler",
+     "types": ["node"],
     "paths": {
-      "@repo/*": ["../../packages/*/src"]
+      "@repo/*": ["../../packages/*/src"],
+       "@/*": ["./*"]
     },
     "plugins": [
       {
