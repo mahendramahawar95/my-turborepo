@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Providers>
-      <body className={geist.className}>{children}</body>
+        <body className={geist.className}>{children}</body>
       </Providers>
     </html>
   );

@@ -1,7 +1,7 @@
 {
   "name": "@repo/react-query-hooks",
   "dependencies": {
-     "@repo/api-client": "workspace:*",
+    "@repo/api-client": "workspace:*",
     "@tanstack/react-query": "^5.0.0"
   },
   "sideEffects": [

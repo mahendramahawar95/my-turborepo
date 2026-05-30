@@ -14,7 +14,7 @@ api.interceptors.request.use(
     // token attach here if needed
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 );
 
 // Response interceptor
@@ -23,7 +23,7 @@ api.interceptors.response.use(
   (error) => {
     // global error handling
     return Promise.reject(error);
-  }
+  },
 );
 
 export default api;

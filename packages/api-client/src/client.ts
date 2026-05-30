@@ -4,9 +4,7 @@ type CreateApiClientOptions = {
   baseURL?: string;
 };
 
-export function createApiClient({
-  baseURL,
-}: CreateApiClientOptions) {
+export function createApiClient({ baseURL }: CreateApiClientOptions) {
   return axios.create({
     baseURL,
     headers: {

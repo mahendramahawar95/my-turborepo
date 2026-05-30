@@ -1,7 +1,4 @@
-import type {
-  ApiResponse,
-  RegisterUserResponse,
-} from "@repo/types";
+import type { ApiResponse, RegisterUserResponse } from "@repo/types";
 
 import type { RegisterInput } from "@repo/validations";
 
@@ -14,16 +11,13 @@ export async function registerApi(
     throw new Error("NEXT_PUBLIC_API_URL is missing");
   }
 
-  const response = await fetch(
-    `${API_BASE_URL}/auth/register`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
+  const response = await fetch(`${API_BASE_URL}/auth/register`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
     },
-  );
+    body: JSON.stringify(payload),
+  });
 
   return response.json();
 }

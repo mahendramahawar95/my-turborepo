@@ -28,8 +28,7 @@ export async function registerUser(
 
   if (!name) errors.name = "Name required";
   if (!email) errors.email = "Email required";
-  if (password.length < 6)
-    errors.password = "Min 6 characters";
+  if (password.length < 6) errors.password = "Min 6 characters";
 
   if (Object.keys(errors).length > 0) {
     return {
@@ -39,31 +38,31 @@ export async function registerUser(
     };
   }
 
-const res = await fetch("http://localhost:5001/api/auth/register", {
-  method: "POST",
-  body: JSON.stringify({
-    name,
-    email,
-    password,
-  }),
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
-
-const data = await res.json();
-
-if (!res.ok) {
-  return {
-    errors: {
-      email: data.message || "Registration failed",
+  const res = await fetch("http://localhost:5001/api/auth/register", {
+    method: "POST",
+    body: JSON.stringify({
+      name,
+      email,
+      password,
+    }),
+    headers: {
+      "Content-Type": "application/json",
     },
-    values: { name, email, password },
-    success: false,
-  };
-}
+  });
 
-return {
-  success: true,
-};
+  const data = await res.json();
+
+  if (!res.ok) {
+    return {
+      errors: {
+        email: data.message || "Registration failed",
+      },
+      values: { name, email, password },
+      success: false,
+    };
+  }
+
+  return {
+    success: true,
+  };
 }

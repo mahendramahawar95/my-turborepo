@@ -2,15 +2,9 @@
 
 import { registerApi } from "@repo/api-client";
 
-import {
-  registerSchema,
-  type RegisterInput,
-} from "@repo/validations";
+import { registerSchema, type RegisterInput } from "@repo/validations";
 
-export async function registerAction(
-  prevState: unknown,
-  formData: FormData,
-) {
+export async function registerAction(prevState: unknown, formData: FormData) {
   const rawData: RegisterInput = {
     name: String(formData.get("name")),
     email: String(formData.get("email")),
@@ -35,7 +29,7 @@ export async function registerAction(
     return {
       success: false,
       message: "Something went wrong",
-      Error: error
+      Error: error,
     };
   }
 }

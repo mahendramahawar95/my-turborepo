@@ -1,7 +1,7 @@
 import * as React from "react";
 import { cn } from "./utils";
 
- type ButtonProps = React.ComponentProps<"button">;
+type ButtonProps = React.ComponentProps<"button">;
 
 export function Button({ className, ...props }: ButtonProps) {
   return (

@@ -30,8 +30,6 @@ export default function RegisterForm() {
   );
 }
 
-
-
 // "use client";
 
 // import { useActionState } from "react";
@@ -46,7 +44,7 @@ export default function RegisterForm() {
 //     email: "",
 //     password: "",
 //   },
-  
+
 //   success: false,
 // };
 
@@ -62,7 +60,7 @@ export default function RegisterForm() {
 //     <form action={formAction} className="space-y-2">
 
 //       {/* Name */}
-     
+
 //         <Input
 //           type="text"
 //           name="name"
@@ -70,7 +68,7 @@ export default function RegisterForm() {
 //           placeholder="Name"
 //           error={state.errors?.name}
 //         />
-    
+
 //       {/* Email */}
 //        <Input
 //           type="text"

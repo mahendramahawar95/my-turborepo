@@ -4,4 +4,3 @@ export const postcssConfig = {
     "@tailwindcss/postcss": {},
   },
 };
-

@@ -3,11 +3,7 @@ import bcrypt from "bcrypt";
 
 import { registerSchema } from "@repo/validations";
 
-
-export async function registerController(
-  req: Request,
-  res: Response,
-) {
+export async function registerController(req: Request, res: Response) {
   try {
     const parsed = registerSchema.safeParse(req.body);
 

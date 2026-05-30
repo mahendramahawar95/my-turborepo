@@ -10,10 +10,7 @@ import { Input } from "@repo/ui/input";
 import { Button } from "@repo/ui/button";
 import { FormError } from "@repo/ui/form-error";
 
-import {
-  registerSchema,
-  type RegisterInput,
-} from "@repo/validations";
+import { registerSchema, type RegisterInput } from "@repo/validations";
 
 import { registerAction } from "@/app/actions/auth/register.action";
 const initialState = {
@@ -32,10 +29,7 @@ function SubmitButton() {
   );
 }
 export default function RegisterForm() {
-  const [state, formAction] = useActionState(
-    registerAction,
-    initialState,
-  );
+  const [state, formAction] = useActionState(registerAction, initialState);
 
   const {
     register,
@@ -45,7 +39,7 @@ export default function RegisterForm() {
     resolver: zodResolver(registerSchema),
     mode: "onChange",
   });
-   useEffect(() => {
+  useEffect(() => {
     if (state?.errors) {
       Object.entries(state.errors).forEach(([field, messages]) => {
         setError(field as keyof RegisterInput, {
@@ -56,40 +50,28 @@ export default function RegisterForm() {
     }
   }, [state, setError]);
 
-   return (
+  return (
     <form
       action={formAction}
       className="mx-auto flex w-full max-w-md flex-col gap-5 rounded-2xl border p-6 shadow-sm"
     >
       <div>
-        <label className="mb-2 block text-sm font-medium">
-          Name
-        </label>
+        <label className="mb-2 block text-sm font-medium">Name</label>
 
-        <Input
-          placeholder="Enter your name"
-          {...register("name")}
-        />
+        <Input placeholder="Enter your name" {...register("name")} />
 
         <FormError message={errors.name?.message} />
       </div>
       <div>
-        <label className="mb-2 block text-sm font-medium">
-          Email
-        </label>
+        <label className="mb-2 block text-sm font-medium">Email</label>
 
-        <Input
-          placeholder="Enter your email"
-          {...register("email")}
-        />
+        <Input placeholder="Enter your email" {...register("email")} />
 
         <FormError message={errors.email?.message} />
       </div>
 
       <div>
-        <label className="mb-2 block text-sm font-medium">
-          Password
-        </label>
+        <label className="mb-2 block text-sm font-medium">Password</label>
         <Input
           type="password"
           placeholder="Enter your password"
@@ -103,7 +85,7 @@ export default function RegisterForm() {
         <label className="mb-2 block text-sm font-medium">
           Confirm Password
         </label>
-          <Input
+        <Input
           type="password"
           placeholder="Confirm password"
           {...register("confirmPassword")}
@@ -115,10 +97,8 @@ export default function RegisterForm() {
       {!state.success && state.message && (
         <p className="text-sm text-red-500">{state.message}</p>
       )}
-       {state.success && (
-        <p className="text-sm text-green-600">
-          Account created successfully
-        </p>
+      {state.success && (
+        <p className="text-sm text-green-600">Account created successfully</p>
       )}
 
       <SubmitButton />
