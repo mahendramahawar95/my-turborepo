@@ -13,7 +13,6 @@ export async function registerAction(prevState: unknown, formData: FormData) {
   };
 
   const validatedFields = registerSchema.safeParse(rawData);
-
   if (!validatedFields.success) {
     return {
       success: false,
