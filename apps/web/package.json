@@ -12,6 +12,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@repo/validations": "workspace:*",
     "@repo/api-client": "workspace:*",
     "@repo/ui": "workspace:*",
     "@tanstack/react-query": "^5.100.14",
